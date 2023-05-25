@@ -1,12 +1,9 @@
-import './App.css';
-import RandomAnimal from './RandomAnimal';
+import React from "react";
+import "./App.css";
+import { CharacterCard } from "./Components/CharacterCard";
 
 function App() {
-  return (
-    <div className="App">
-      <RandomAnimal />
-    </div>
-  );
+  return <CharacterCard />;
 }
 
 export default App;
