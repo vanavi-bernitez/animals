@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import { getCharacter } from "../helpers/getCharacter";
 import { SubmitButton } from "./SubmitButton";
-
-import naImg from "../images/na.png";
-import manImg from "../images/man.png";
-import womanImg from "../images/woman.png";
-
-const avatarSource = {
-  naImg,
-  manImg,
-  womanImg,
-};
+import { AvatarImg } from "./AvatarImg";
+import { GeneralInfo } from "./GeneralInfo";
+import { SpecificInfo } from "./SpecificInfo";
+import avatarSource from "../helpers/imagesObject"
 
 let sourceImage;
 
@@ -39,23 +33,11 @@ const CharacterCard = () => {
     <div className="backGround">
       <div className="characterCard">
         <div className="information">
-          <div className="generalInfo">
-            <h2>{data.name}</h2>
-            <p>Height: {data.height}</p>
-            <p>Gender: {data.gender}</p>
-            <p>Birth year: {data.birthYear}</p>
-          </div>
-
-          <div className="specificInfo">
-            <p>Hair color: {data.hairColor}</p>
-            <p>Skin color: {data.skinColor}</p>
-            <p>Eye color: {data.eyeColor}</p>
-          </div>
-          <SubmitButton onClick={handleClick} />
+          <GeneralInfo srcData={data}/>
+          <SpecificInfo srcData={data} />
+          <SubmitButton handleOnClick={handleClick} />
         </div>
-        <div className="avatarContainer">
-          <img src={sourceImage} alt="Star wars avatar" />
-        </div>
+        <AvatarImg srcImage={sourceImage} />
       </div>
     </div>
   );

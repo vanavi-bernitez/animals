@@ -1,9 +1,9 @@
 import React from "react";
 import swLogo from "../images/buttonIcon.png";
 
-const SubmitButton = ( props ) => {
+const SubmitButton = ( {handleOnClick} ) => {
   return (
-    <button className="submitButton" onClick={props.onClick}>
+    <button className="submitButton" onClick={handleOnClick}>
       <img src={swLogo} alt="star wars" />
     </button>
   );
